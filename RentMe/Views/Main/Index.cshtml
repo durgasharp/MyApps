@@ -1,0 +1,45 @@
+﻿
+
+@{
+    ViewBag.Title = "Rental Paradise";
+}
+<div style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+
+    <div style="background-color:antiquewhite">
+        <div style="color:blue">
+            <div class="col-md-offset-2 col-md-20">
+                <a href="URL of link" title="Contact#7893821448, Email:durga51@gmail.com">Contact Us</a>
+            </div>
+            <h3>Rental Paradise</h3>
+            <div style="font-family:'Trebuchet MS'">
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+
+                        <div class="form-group">
+
+
+                            <div class="col-md-10">
+                                @Html.ActionLink("Owner -Post An Ad", "Create", "Renter")
+                            </div>
+                            <div class="col-md-10">
+                                @Html.ActionLink("Tenent -Search", "TenentMain", "Tenent")
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                }
+            </div>
+
+            </div>
+        </div>
+
+    </div>
+
+

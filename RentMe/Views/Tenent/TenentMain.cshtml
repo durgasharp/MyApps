@@ -1,0 +1,65 @@
+﻿@model RentMe.Models.Tenent
+
+@{
+    ViewBag.Title = "TenentMain";
+}
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.PropertyType, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+               
+
+                @Html.DropDownList("PropertyType", new List<SelectListItem> {
+                                      { new SelectListItem {Text ="2BHK",Value="2BHK"} },
+                                      { new SelectListItem {Text ="3BHK",Value="3BHK"} },
+                                      { new SelectListItem {Text ="PENTHOUSE",Value="PENTHOUSE"} },
+                                      { new SelectListItem {Text =" ",Value=" "} }
+
+
+                    }, " Select Property Type")
+                @Html.ValidationMessageFor(model => model.PropertyType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Rent, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Rent", new List<SelectListItem> {
+                                      { new SelectListItem {Text ="<  7000",Value="7000"} },
+                                      { new SelectListItem {Text ="< 10000",Value="10000"} },
+                                      { new SelectListItem {Text ="< 15000",Value="15000"} }
+
+
+                    }, " ")
+               
+                    @Html.ValidationMessageFor(model => model.Rent, "", new { @class = "text-danger" })
+</div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Search" class="btn btn-default" />
+                
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index","Main")
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
