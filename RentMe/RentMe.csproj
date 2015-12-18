@@ -407,8 +407,8 @@
   </Target>
   +  <PropertyGroup>
 +    <PostBuildEvent>
-+      if not exist "$(WebProjectOutputDir)\bin\Roslyn" md "$(WebProjectOutputDir)\bin\Roslyn"
-+      start /MIN xcopy /s /y /R "$(OutDir)roslyn\*.*" "$(WebProjectOutputDir)\bin\Roslyn"
++      if not exist "$(RentMeOutputDir)\bin\Roslyn" md "$(RentMeOutputDir)\bin\Roslyn"
++      start /MIN xcopy /s /y /R "$(OutDir)roslyn\*.*" "$(RentMeOutputDir)\bin\Roslyn"
 +    </PostBuildEvent>
 +  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
